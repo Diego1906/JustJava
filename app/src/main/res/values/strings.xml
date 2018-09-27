@@ -2,4 +2,7 @@
     <string name="app_name">Just Java</string>
     <string name="quantity">QUANTITY</string>
     <string name="order">Order</string>
+    <string name="price">PRICE</string>
+    <string name="clear">Clear</string>
+    <string name="value_price">$0</string>
 </resources>
