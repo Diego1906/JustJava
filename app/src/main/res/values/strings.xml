@@ -4,5 +4,5 @@
     <string name="order">Order</string>
     <string name="price">PRICE</string>
     <string name="clear">Clear</string>
-    <string name="value_price">$0</string>
+    <string name="value_price">R$0</string>
 </resources>

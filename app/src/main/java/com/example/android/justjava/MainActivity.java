@@ -9,11 +9,11 @@ import android.widget.Toast;
 import java.text.NumberFormat;
 
 /*
- * This app displays an order form to order coffee
- * */
+ * This app displays an order form to order coffee */
 public class MainActivity extends AppCompatActivity {
 
-    private int number = 0;
+    private int quantityCoffee = 0;
+    private int priceOneCoffee = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,25 +24,36 @@ public class MainActivity extends AppCompatActivity {
     /*
      * This method is called when the order button is clicked*/
     public void submitOrder(View view) {
-        number++;
-        display(number);
+        quantityCoffee++;
+        display(quantityCoffee);
+        displayPrice(quantityCoffee * priceOneCoffee);
     }
 
+    /*
+    * This method is called when to arrive the moment of the show at information for the user */
     private void display(int number) {
         TextView quantityTextView = findViewById(R.id.quantity_text_view);
         quantityTextView.setText(String.valueOf(number));
     }
 
+    /*
+    * This method is called when to arrive the moment of the show the value of the coffee for user */
     private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        TextView valuePriceTextView = findViewById(R.id.value_price_text_view);
+        valuePriceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
+    /* Method that is used for clear the fields in the program */
     public void clearOrder(View view) {
-        if (number != 0) {
-            number = 0;
+        if (quantityCoffee != 0) {
+            quantityCoffee = 0;
+
             TextView quantityTextView = findViewById(R.id.quantity_text_view);
-            quantityTextView.setText(String.valueOf(number));
+            quantityTextView.setText(String.valueOf(quantityCoffee));
+
+            TextView valuePrice = findViewById(R.id.value_price_text_view);
+            valuePrice.setText(String.valueOf("R$" + quantityCoffee));
+
             Toast.makeText(this, "Limpeza realizada com sucesso", Toast.LENGTH_SHORT).show();
         }
     }
