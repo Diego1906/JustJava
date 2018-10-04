@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         valuePriceTextView.setText(NumberFormat.getCurrencyInstance().format(price));
     }
 
-    /* Method that is used for clear the fields in the program */
+    /*
+     * This method is used for clear the fields in the program */
     public void clearOrder(View view) {
         if (quantityCoffee > 0) {
             quantityCoffee = 0;
